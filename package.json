@@ -1,0 +1,32 @@
+{
+  "name": "readingcorner",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  },
+  "devDependencies": {
+    "@types/parcel-env": "0.0.0",
+    "@types/react": "^16.9.49",
+    "@types/react-dom": "^16.9.8",
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel ./src/public/index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mark-halls/readingcorner.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mark-halls/readingcorner/issues"
+  },
+  "homepage": "https://github.com/mark-halls/readingcorner#readme"
+}
