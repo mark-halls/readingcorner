@@ -9,6 +9,8 @@
     "react-dom": "^16.13.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
     "@types/parcel-env": "0.0.0",
     "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
@@ -29,5 +31,12 @@
   "bugs": {
     "url": "https://github.com/mark-halls/readingcorner/issues"
   },
-  "homepage": "https://github.com/mark-halls/readingcorner#readme"
+  "homepage": "https://github.com/mark-halls/readingcorner#readme",
+  "browserslist": [
+    "since 2017-06",
+    "not op_mob > 0"
+  ],
+  "resolutions": {
+    "parcel/browserslist": "4.14.2"
+  }
 }
