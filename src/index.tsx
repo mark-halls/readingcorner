@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-// import JSZip from "jszip";
+import JSZip from "jszip";
 
 if (module.hot) {
   module.hot.accept();
@@ -8,9 +8,12 @@ if (module.hot) {
 
 // const unzip = new JSZip();
 const unzipFile = async () => {
-  //   const unzipped = await unzip.loadAsync("/static/books/pg16328.epup");
-  const test = await new Promise(() => {});
-  //   console.log(unzipped);?
+  const zipFile = await fetch("http://localhost:1234/books/pg16328.epub");
+  const blob = await zipFile.blob();
+
+  const unzipped = await JSZip.loadAsync(blob);
+
+  console.log(unzipped);
 };
 
 unzipFile();
