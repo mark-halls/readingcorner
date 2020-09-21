@@ -13,7 +13,16 @@ const unzipFile = async () => {
 
   const unzipped = await JSZip.loadAsync(blob);
 
-  console.log(unzipped);
+  const cover = await unzipped
+    .file(
+      "OEBPS/@export@sunsite@users@gutenbackend@cache@epub@16328@16328-cover.png"
+    )
+    ?.async("base64");
+  console.log(cover);
+  ReactDOM.render(
+    <img src={`data:image/png;base64, ${cover}`} />,
+    document.getElementById("root")
+  );
 };
 
 unzipFile();
