@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "html-react-parser": "^0.14.0",
     "jszip": "^3.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"

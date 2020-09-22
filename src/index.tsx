@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import Parser from "html-react-parser";
 import JSZip from "jszip";
 
 if (module.hot) {
@@ -18,11 +19,28 @@ const unzipFile = async () => {
       "OEBPS/@export@sunsite@users@gutenbackend@cache@epub@16328@16328-cover.png"
     )
     ?.async("base64");
-  console.log(cover);
-  ReactDOM.render(
-    <img src={`data:image/png;base64, ${cover}`} />,
-    document.getElementById("root")
-  );
+
+  const page = await unzipped
+    .file(
+      "OEBPS/@public@vhost@g@gutenberg@html@files@16328@16328-h@16328-h-2.htm.html"
+    )
+    ?.async("text");
+  console.log(unzipped);
+  // ReactDOM.render(
+  //   <img src={`data:image/png;base64, ${cover}`} />,
+  //   document.getElementById("root")
+  // );
+
+  const ele = document.createElement("html");
+  if (page) {
+    ele.innerHTML = page;
+    const bod = ele.querySelector("body")?.innerHTML;
+    ReactDOM.render(
+      Parser(bod, { trim: true }),
+      // Parser(page),
+      document.getElementById("root")
+    );
+  }
 };
 
 unzipFile();
